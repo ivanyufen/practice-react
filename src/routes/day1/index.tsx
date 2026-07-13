@@ -1,9 +1,9 @@
 import { useQuery } from '@tanstack/react-query'
 import { createFileRoute } from '@tanstack/react-router'
-import { getCountries, getHolidaysByCountry } from '../api'
+import { getCountries, getHolidaysByCountry } from '#/api'
 import { useCallback, useState } from 'react'
 
-export const Route = createFileRoute('/day1')({
+export const Route = createFileRoute('/day1/')({
   component: RouteComponent,
 })
 

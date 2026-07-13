@@ -1,6 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
-import MemoryGame from '#/components/MemoryGame'
-export const Route = createFileRoute('/day4')({
+import MemoryGame from './MemoryGame'
+
+export const Route = createFileRoute('/day4/')({
   component: RouteComponent,
 })
 

@@ -1,9 +1,9 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { useState } from 'react'
 import { v4 as uuidv4 } from 'uuid'
-import useLocalStorage from '#/hooks/use-local-storage'
+import useLocalStorage from './use-local-storage'
 
-export const Route = createFileRoute('/day3')({
+export const Route = createFileRoute('/day3/')({
   component: RouteComponent,
 })
 

@@ -9,123 +9,107 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as Day5RouteImport } from './routes/day5'
-import { Route as Day4RouteImport } from './routes/day4'
-import { Route as Day3RouteImport } from './routes/day3'
-import { Route as Day2RouteImport } from './routes/day2'
-import { Route as Day1RouteImport } from './routes/day1'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as Day6IndexRouteImport } from './routes/day6/index'
+import { Route as Day5IndexRouteImport } from './routes/day5/index'
+import { Route as Day4IndexRouteImport } from './routes/day4/index'
+import { Route as Day3IndexRouteImport } from './routes/day3/index'
+import { Route as Day2IndexRouteImport } from './routes/day2/index'
+import { Route as Day1IndexRouteImport } from './routes/day1/index'
 
-const Day5Route = Day5RouteImport.update({
-  id: '/day5',
-  path: '/day5',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const Day4Route = Day4RouteImport.update({
-  id: '/day4',
-  path: '/day4',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const Day3Route = Day3RouteImport.update({
-  id: '/day3',
-  path: '/day3',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const Day2Route = Day2RouteImport.update({
-  id: '/day2',
-  path: '/day2',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const Day1Route = Day1RouteImport.update({
-  id: '/day1',
-  path: '/day1',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const Day6IndexRoute = Day6IndexRouteImport.update({
+  id: '/day6/',
+  path: '/day6/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const Day5IndexRoute = Day5IndexRouteImport.update({
+  id: '/day5/',
+  path: '/day5/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const Day4IndexRoute = Day4IndexRouteImport.update({
+  id: '/day4/',
+  path: '/day4/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const Day3IndexRoute = Day3IndexRouteImport.update({
+  id: '/day3/',
+  path: '/day3/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const Day2IndexRoute = Day2IndexRouteImport.update({
+  id: '/day2/',
+  path: '/day2/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const Day1IndexRoute = Day1IndexRouteImport.update({
+  id: '/day1/',
+  path: '/day1/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/day1': typeof Day1Route
-  '/day2': typeof Day2Route
-  '/day3': typeof Day3Route
-  '/day4': typeof Day4Route
-  '/day5': typeof Day5Route
+  '/day1/': typeof Day1IndexRoute
+  '/day2/': typeof Day2IndexRoute
+  '/day3/': typeof Day3IndexRoute
+  '/day4/': typeof Day4IndexRoute
+  '/day5/': typeof Day5IndexRoute
+  '/day6/': typeof Day6IndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/day1': typeof Day1Route
-  '/day2': typeof Day2Route
-  '/day3': typeof Day3Route
-  '/day4': typeof Day4Route
-  '/day5': typeof Day5Route
+  '/day1': typeof Day1IndexRoute
+  '/day2': typeof Day2IndexRoute
+  '/day3': typeof Day3IndexRoute
+  '/day4': typeof Day4IndexRoute
+  '/day5': typeof Day5IndexRoute
+  '/day6': typeof Day6IndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/day1': typeof Day1Route
-  '/day2': typeof Day2Route
-  '/day3': typeof Day3Route
-  '/day4': typeof Day4Route
-  '/day5': typeof Day5Route
+  '/day1/': typeof Day1IndexRoute
+  '/day2/': typeof Day2IndexRoute
+  '/day3/': typeof Day3IndexRoute
+  '/day4/': typeof Day4IndexRoute
+  '/day5/': typeof Day5IndexRoute
+  '/day6/': typeof Day6IndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/day1' | '/day2' | '/day3' | '/day4' | '/day5'
+  fullPaths:
+    '/' | '/day1/' | '/day2/' | '/day3/' | '/day4/' | '/day5/' | '/day6/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/day1' | '/day2' | '/day3' | '/day4' | '/day5'
-  id: '__root__' | '/' | '/day1' | '/day2' | '/day3' | '/day4' | '/day5'
+  to: '/' | '/day1' | '/day2' | '/day3' | '/day4' | '/day5' | '/day6'
+  id:
+    | '__root__'
+    | '/'
+    | '/day1/'
+    | '/day2/'
+    | '/day3/'
+    | '/day4/'
+    | '/day5/'
+    | '/day6/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  Day1Route: typeof Day1Route
-  Day2Route: typeof Day2Route
-  Day3Route: typeof Day3Route
-  Day4Route: typeof Day4Route
-  Day5Route: typeof Day5Route
+  Day1IndexRoute: typeof Day1IndexRoute
+  Day2IndexRoute: typeof Day2IndexRoute
+  Day3IndexRoute: typeof Day3IndexRoute
+  Day4IndexRoute: typeof Day4IndexRoute
+  Day5IndexRoute: typeof Day5IndexRoute
+  Day6IndexRoute: typeof Day6IndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/day5': {
-      id: '/day5'
-      path: '/day5'
-      fullPath: '/day5'
-      preLoaderRoute: typeof Day5RouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/day4': {
-      id: '/day4'
-      path: '/day4'
-      fullPath: '/day4'
-      preLoaderRoute: typeof Day4RouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/day3': {
-      id: '/day3'
-      path: '/day3'
-      fullPath: '/day3'
-      preLoaderRoute: typeof Day3RouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/day2': {
-      id: '/day2'
-      path: '/day2'
-      fullPath: '/day2'
-      preLoaderRoute: typeof Day2RouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/day1': {
-      id: '/day1'
-      path: '/day1'
-      fullPath: '/day1'
-      preLoaderRoute: typeof Day1RouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/': {
       id: '/'
       path: '/'
@@ -133,16 +117,59 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/day6/': {
+      id: '/day6/'
+      path: '/day6'
+      fullPath: '/day6/'
+      preLoaderRoute: typeof Day6IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/day5/': {
+      id: '/day5/'
+      path: '/day5'
+      fullPath: '/day5/'
+      preLoaderRoute: typeof Day5IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/day4/': {
+      id: '/day4/'
+      path: '/day4'
+      fullPath: '/day4/'
+      preLoaderRoute: typeof Day4IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/day3/': {
+      id: '/day3/'
+      path: '/day3'
+      fullPath: '/day3/'
+      preLoaderRoute: typeof Day3IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/day2/': {
+      id: '/day2/'
+      path: '/day2'
+      fullPath: '/day2/'
+      preLoaderRoute: typeof Day2IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/day1/': {
+      id: '/day1/'
+      path: '/day1'
+      fullPath: '/day1/'
+      preLoaderRoute: typeof Day1IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  Day1Route: Day1Route,
-  Day2Route: Day2Route,
-  Day3Route: Day3Route,
-  Day4Route: Day4Route,
-  Day5Route: Day5Route,
+  Day1IndexRoute: Day1IndexRoute,
+  Day2IndexRoute: Day2IndexRoute,
+  Day3IndexRoute: Day3IndexRoute,
+  Day4IndexRoute: Day4IndexRoute,
+  Day5IndexRoute: Day5IndexRoute,
+  Day6IndexRoute: Day6IndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

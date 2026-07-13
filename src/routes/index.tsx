@@ -1,14 +1,23 @@
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute, Link, useRouter } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/')({ component: Home })
 
 function Home() {
+  const router = useRouter()
+
   return (
     <div className="p-8">
-      <h1 className="text-4xl font-bold">Welcome to TanStack Start</h1>
-      <p className="mt-4 text-lg">
-        Edit <code>src/routes/index.tsx</code> to get started.
-      </p>
+      <h1>28 Days of React Practice</h1>
+      <ul style={{ marginTop: 20, fontSize: '1.25rem' }}></ul>
+      {Object.values(router.routesByPath).map((item) => {
+        if (item.path === '/') return
+
+        return (
+          <li key={item.path}>
+            <Link to={item.path}>{item.path}</Link>
+          </li>
+        )
+      })}
     </div>
   )
 }
